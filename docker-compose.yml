@@ -1,0 +1,17 @@
+version: '3'
+services:
+  fcm-python:
+    image: fcm-python
+    build:
+      context: fcm-python
+      dockerfile: Dockerfile
+  starwars-api:
+    image: starwars-api # Image names must be username/imagename(:tag) because username is mandatory if you want to push to Hub. Only big companies/projects can use an image name without username
+    build: starwars-api # Shorthand when dockerfile is named Dockerfile
+    pull_policy: if_not_present
+
+  # fcm-python-big:
+  #  image: fcm-python-big
+  #  build:
+  #    context: python-image
+  #    dockerfile: Dockerfile.big
