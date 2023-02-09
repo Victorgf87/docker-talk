@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: star-wars-api-deployment
+  labels:
+    app: starwars-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: starwars-api
+  template:
+    metadata:
+      labels:
+        app: starwars-api
+    spec:
+      containers:
+      - name: starwars-api
+        image: fcmvictorgf87/starwars-api-planets:latest
+        ports:
+        - containerPort: 80
