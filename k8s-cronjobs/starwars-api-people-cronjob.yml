@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: starwars-api-people
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: starwars-api-people
+            image: fcmvictorgf87/starwars-api-people:latest
+            imagePullPolicy: IfNotPresent
+            #command:
+            #- /bin/sh
+            #- -c
+            #- date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
