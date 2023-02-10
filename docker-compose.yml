@@ -13,6 +13,11 @@ services:
     image: fcmvictorgf87/starwars-api-planets # Image names must be username/imagename(:tag) because username is mandatory if you want to push to Hub. Only big companies/projects can use an image name without username
     build: starwars-api-planets # Shorthand when dockerfile is named Dockerfile
     pull_policy: if_not_present
+  infinite-loop:
+    image: fcmvictorgf87/infinite-loop
+    build: infinite-loop
+    volumes:
+      - ./infinite-loop/storage:/app
 
   # fcm-python-big:
   #  image: fcm-python-big
