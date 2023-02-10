@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: infinite-loop-pod
+  namespace: victor-demo
+spec:
+  volumes:
+    - name: infinite-loop-storage
+      persistentVolumeClaim:
+        claimName: infinite-loop-volume-claim
+  containers:
+  - name: infinite-loop-pod
+    image: fcmvictorgf87/infinite-loop
+    imagePullPolicy: Always
+    volumeMounts:
+      - name: infinite-loop-storage
+        mountPath: "/app"
