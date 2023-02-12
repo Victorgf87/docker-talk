@@ -1,0 +1,10 @@
+version: "3" # I am not sure about the differences between versions, but this one is fine for all I do
+services:
+  node-app:
+    image: victorgf87/node-app
+    build: . # If you had more than one Dockerfile, you could specify the path to the one you want to use
+    container_name: node-app
+    ports:
+     - "8081:8080" # This is the port that the container will use, and the port that will be exposed to the host
+    volumes:
+      - ./volume:/content # This is the path to the folder that will be mounted in the container

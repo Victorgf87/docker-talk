@@ -1,0 +1,1 @@
+docker build -t victorgf87/docker-node-simple .
