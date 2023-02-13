@@ -96,6 +96,7 @@ But one of the biggest reasons I like it is because it makes easy to do what we 
 Let's use compose for node-app
 
 
+
 ----------------------------------------------------- END
 How to create an image:
 Docker images have a very reduced amount of instructions, which are very easy to learn.
